@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IWD 2024 — Event Branding | Ian Marocha</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #fff;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: #1A0A14;
+  padding: 100px 40px 80px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #38C9C1;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 600;
+  line-height: 1.0;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #F05B8F;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 48px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/* ── META ROW ── */
+.meta-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
+.meta-item {
+  padding: 28px 40px;
+  border-right: 1px solid #eee;
+}
+
+.meta-item:last-child { border-right: none; }
+
+.meta-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.meta-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #111;
+  font-weight: 600;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+section:last-of-type { border-bottom: none; }
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #F05B8F;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.section-heading em {
+  font-style: italic;
+  color: #7B4FC0;
+}
+
+.body-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #555;
+  max-width: 620px;
+  font-weight: 300;
+}
+
+/* ── IMAGE BLOCKS ── */
+.img-full {
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.img-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.img-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.img-cell {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-cell .img-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  opacity: 0.55;
+}
+
+/* colour palette swatches */
+.swatch-row {
+  display: flex;
+  gap: 12px;
+  margin: 32px 0 12px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.swatch-name {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.swatch-hex {
+  font-size: 11px;
+  color: #aaa;
+  font-family: monospace;
+}
+
+/* DS grid */
+.ds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: #f4f4f4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.ds-card {
+  background: #fff;
+  padding: 36px 32px;
+}
+
+.ds-card-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.type-sample {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 600;
+  color: #1A0A14;
+  line-height: 1.1;
+}
+
+.type-caption {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* deliverables list */
+.deliverables-list {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.deliverables-list li {
+  font-size: 14px;
+  color: #555;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deliverables-list li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F05B8F;
+  flex-shrink: 0;
+}
+
+/* ── IMPACT STATS ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #f4f4f4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 600;
+  color: #F05B8F;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.stat-desc {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.7;
+  max-width: 220px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ── TAGS ── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.tag {
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.tag-outline {
+  border: 1px solid #ddd;
+  color: #888;
+  background: transparent;
+}
+
+.tag-filled {
+  background: #1A0A14;
+  color: #fff;
+  border: none;
+}
+
+/* ── FOOTER ── */
+.case-footer {
+  background: #1A0A14;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer-role {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-links a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: #F05B8F; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .meta-row, .ds-grid, .stats-row { grid-template-columns: 1fr 1fr; }
+  .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+  .case-footer { flex-direction: column; gap: 24px; text-align: center; }
+  .container { padding: 0 24px; }
+  section { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="eyebrow">Event Branding &amp; Social Media</p>
+  <h1 class="hero-title">International<br><em>Women's Day</em><br>2024</h1>
+  <p class="hero-subtitle">Mega We Care Ghana · Give To Gain</p>
+</header>
+
+<!-- META ROW -->
+<div class="meta-row">
+  <div class="meta-item">
+    <p class="meta-label">Client</p>
+    <p class="meta-value">Mega We Care Ghana</p>
+  </div>
+  <div class="meta-item">
+    <p class="meta-label">Partners</p>
+    <p class="meta-value">MoH Ghana &amp; MWAG</p>
+  </div>
+  <div class="meta-item">
+    <p class="meta-label">Deliverables</p>
+    <p class="meta-value">Brand · Print · Social</p>
+  </div>
+  <div class="meta-item">
+    <p class="meta-label">Date</p>
+    <p class="meta-value">8th March 2024</p>
+  </div>
+</div>
+
+<!-- BRIEF -->
+<section>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <p class="section-label">The Brief</p>
+        <h2 class="section-heading">A celebration rooted in<br><em>health &amp; sisterhood</em></h2>
+        <p class="body-text">Full event brand identity for Mega We Care Ghana in partnership with the Ministry of Health and the Medical Women's Association of Ghana (MWAG). The brief called for a visual language that honoured women's health, felt festive and alive, and unified three institutional partners under one cohesive voice.</p>
+        <div class="tags" style="margin-top:28px;">
+          <span class="tag tag-filled">Event Branding</span>
+          <span class="tag tag-outline">Print Collateral</span>
+          <span class="tag tag-outline">Social Media</span>
+          <span class="tag tag-outline">Ghana — 2024</span>
+        </div>
+      </div>
+      <div class="img-full" style="background:linear-gradient(135deg,#1A0A14 0%,#3B1A2F 100%);height:420px;">
+        <span class="img-label" style="color:#fff;">Hero Poster / Key Visual</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN SYSTEM -->
+<section>
+  <div class="container">
+    <p class="section-label">Design System</p>
+    <h2 class="section-heading">Colour, type &amp; <em>deliverables</em></h2>
+
+    <div class="ds-grid">
+      <!-- Colour -->
+      <div class="ds-card">
+        <p class="ds-card-label">Colour Palette</p>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#F05B8F;"></div>
+            <span class="swatch-name">Hot Pink</span>
+            <span class="swatch-hex">#F05B8F</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#7B4FC0;"></div>
+            <span class="swatch-name">Violet</span>
+            <span class="swatch-hex">#7B4FC0</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#38C9C1;"></div>
+            <span class="swatch-name">Teal</span>
+            <span class="swatch-hex">#38C9C1</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#1A0A14;"></div>
+            <span class="swatch-name">Dark</span>
+            <span class="swatch-hex">#1A0A14</span>
+          </div>
+        </div>
+        <p class="type-caption">Hot pink energy, violet depth, teal freshness — festive, feminine, and alive on both print and screen.</p>
+      </div>
+
+      <!-- Typography -->
+      <div class="ds-card">
+        <p class="ds-card-label">Typography</p>
+        <p class="type-sample">Women's<br>Day</p>
+        <p class="type-caption">Script display type for headlines gives the identity warmth and elegance. Clean sans-serif for event details maintains legibility at distance.</p>
+      </div>
+
+      <!-- Deliverables -->
+      <div class="ds-card">
+        <p class="ds-card-label">Deliverables</p>
+        <ul class="deliverables-list">
+          <li>Event backdrop design</li>
+          <li>Photo booth frame</li>
+          <li>Balloon arch installation</li>
+          <li>Product standee</li>
+          <li>Branded gift bags</li>
+          <li>Social media assets</li>
+          <li>Speaker session graphics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUTTERFLY / MOTIF -->
+<section style="border-bottom:none;padding-bottom:40px;">
+  <div class="container">
+    <p class="section-label">Brand Motif</p>
+    <h2 class="section-heading">The butterfly — <em>product &amp; purpose</em></h2>
+    <p class="body-text">A butterfly motif anchored the visual system, simultaneously activating four Mega We Care health products — Fenza, ENAT 400, MaxCal, and Ginsomineve — while symbolising transformation, care, and feminine strength.</p>
+  </div>
+</section>
+
+<!-- FULL-WIDTH BACKDROP VISUAL -->
+<div class="container">
+  <div class="img-full" style="background:linear-gradient(120deg,#F05B8F22 0%,#7B4FC022 50%,#38C9C122 100%);border:1px solid #f0e0e8;">
+    <span class="img-label">Event Backdrop — Full Bleed</span>
+  </div>
+</div>
+
+<!-- PHOTOGRAPHY GRID -->
+<section>
+  <div class="container">
+    <p class="section-label">Event Photography</p>
+    <h2 class="section-heading">Branding <em>in the wild</em></h2>
+
+    <div class="img-grid-2">
+      <div class="img-cell" style="background:#f9f0f4;height:340px;">
+        <span class="img-label">Photo booth frame — butterfly motif</span>
+      </div>
+      <div class="img-cell" style="background:#f4f0f9;height:340px;">
+        <span class="img-label">Event backdrop with balloon arch</span>
+      </div>
+    </div>
+
+    <div class="img-grid-3">
+      <div class="img-cell" style="background:#f0f9f9;height:260px;">
+        <span class="img-label">Frame detail — Give To Gain</span>
+      </div>
+      <div class="img-cell" style="background:#fdf0f5;height:260px;">
+        <span class="img-label">MWAG members at photo booth</span>
+      </div>
+      <div class="img-cell" style="background:#f4f0f9;height:260px;">
+        <span class="img-label">Frame in context — speaker session</span>
+      </div>
+    </div>
+
+    <div class="img-grid-2">
+      <div class="img-cell" style="background:#f9f4f0;height:280px;">
+        <span class="img-label">Prize giving — branded gift bags</span>
+      </div>
+      <div class="img-cell" style="background:#f0f4f9;height:280px;">
+        <span class="img-label">Prize giving — product standee background</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section style="background:#fafafa;padding:80px 0;">
+  <div class="container">
+    <p class="section-label">Impact &amp; Outcomes</p>
+    <h2 class="section-heading">Branding <em>that worked</em></h2>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <p class="stat-num">3</p>
+        <p class="stat-desc">Institutional partners — Mega We Care, Ministry of Health Ghana, and MWAG — unified under one cohesive visual identity.</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-num">4</p>
+        <p class="stat-desc">Women's health products activated through the butterfly motif — Fenza, ENAT 400, MaxCal, and Ginsomineve.</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-num" style="color:#38C9C1;">∞</p>
+        <p class="stat-desc">Photo booth frames shared organically — every attendee photo a piece of branded content for @mega_we_care_gh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="case-footer">
+  <div>
+    <p class="footer-name">Ian Marocha</p>
+    <p class="footer-role">Creative Multimedia Art Director · Nairobi, Kenya</p>
+  </div>
+  <div class="footer-links">
+    <a href="https://behance.net/iannyaata" target="_blank">Behance</a>
+    <a href="mailto:hello@ianmarocha.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
