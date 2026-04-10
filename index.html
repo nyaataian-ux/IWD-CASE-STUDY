@@ -22,8 +22,8 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--dark);
-    color: #fff;
+    background: #fff;
+    color: #1a1a1a;
     overflow-x: hidden;
   }
 
@@ -34,6 +34,7 @@
     grid-template-columns: 1fr 1fr;
     position: relative;
     overflow: hidden;
+    background: #fff;
   }
   .hero::before {
     content: '';
@@ -66,6 +67,7 @@
     margin-bottom: 28px;
     opacity: 0;
     animation: fadeUp .8s .4s forwards;
+    color: #1a1a1a;
   }
   .hero-title em {
     font-style: italic;
@@ -74,7 +76,7 @@
   .hero-desc {
     font-size: 16px;
     line-height: 1.7;
-    color: rgba(255,255,255,.65);
+    color: rgba(0,0,0,.65);
     max-width: 420px;
     margin-bottom: 48px;
     opacity: 0;
@@ -90,9 +92,9 @@
     border-radius: 100px;
     font-size: 12px;
     letter-spacing: .5px;
-    border: 1px solid rgba(255,255,255,.15);
-    color: rgba(255,255,255,.7);
-    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(0,0,0,.15);
+    color: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.05);
   }
   .tag.accent { background: var(--pink); border-color: var(--pink); color: #fff; }
 
@@ -117,6 +119,7 @@
     grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid rgba(255,255,255,.08);
     border-bottom: 1px solid rgba(255,255,255,.08);
+    background: var(--dark);
   }
   .meta-item {
     padding: 32px 40px;
@@ -137,7 +140,7 @@
   }
 
   /* ── SECTIONS ── */
-  section { padding: 100px 80px; }
+  section { padding: 100px 80px; background: #fff; color: #1a1a1a; }
 
   .section-label {
     font-size: 10px;
@@ -152,17 +155,18 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 32px;
+    color: #1a1a1a;
   }
   .section-heading em { font-style: italic; color: var(--teal); }
   .body-text {
     font-size: 16px;
     line-height: 1.8;
-    color: rgba(255,255,255,.65);
+    color: rgba(0,0,0,.65);
     max-width: 640px;
   }
 
   /* ── BRIEF ── */
-  .brief { background: #120810; }
+  .brief { background: #fff; }
   .brief-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -179,6 +183,8 @@
 
   /* ── DESIGN SYSTEM ── */
   .design-sys { background: var(--dark); }
+  .design-sys .section-heading { color: #fff; }
+  .design-sys .section-label { color: rgba(255,255,255,.6); }
   .ds-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -236,9 +242,11 @@
   }
 
   /* ── GALLERY ── */
-  .gallery { background: #0e060c; padding: 100px 0; }
+  .gallery { background: #fff; padding: 100px 0; }
   .gallery-inner { padding: 0 80px; }
-  .gallery-header { margin-bottom: 60px; }
+  .gallery-header { margin-bottom: 60px; color: #1a1a1a; }
+  .gallery-header .section-heading { color: #1a1a1a; }
+  .gallery-header .section-label { color: var(--pink); }
 
   .gallery-masonry {
     display: grid;
@@ -282,7 +290,8 @@
   .g7 { grid-column: 7/13; grid-row: 3; aspect-ratio: 16/9; }
 
   /* ── IMPACT ── */
-  .impact { background: var(--dark); }
+  .impact { background: var(--dark); color: #fff; }
+  .impact .section-heading { color: #fff; }
   .impact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -314,6 +323,9 @@
     line-height: 1.6;
     color: rgba(255,255,255,.55);
   }
+  .impact .body-text {
+    color: rgba(255,255,255,.65);
+  }
   .impact-image-stack {
     position: relative;
     height: 500px;
@@ -330,10 +342,12 @@
   /* ── FOOTER ── */
   .case-footer {
     padding: 60px 80px;
-    border-top: 1px solid rgba(255,255,255,.07);
+    border-top: 1px solid rgba(0,0,0,.07);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #fff;
+    color: #1a1a1a;
   }
   .footer-name {
     font-family: 'Playfair Display', serif;
@@ -343,7 +357,7 @@
     display: flex; gap: 32px;
   }
   .footer-links a {
-    color: rgba(255,255,255,.45);
+    color: rgba(0,0,0,.45);
     text-decoration: none;
     font-size: 13px;
     letter-spacing: 1px;
@@ -378,7 +392,7 @@
   <div class="hero-text">
     <p class="hero-eyebrow">Event Branding &amp; Social Media</p>
     <h1 class="hero-title">International<br><em>Women's Day</em><br>2026</h1>
-    <p class="hero-desc">Full event brand identity for Mega We Care Ghana in partnership with the Ministry of Health and the Medical Women's Association of Ghana (MWAG). Theme: <strong style="color:#fff">Give To Gain.</strong></p>
+    <p class="hero-desc">Full event brand identity for Mega We Care Ghana in partnership with the Ministry of Health and the Medical Women's Association of Ghana (MWAG). Theme: <strong style="background:linear-gradient(135deg,#38C9C1,#F05B8F,#7B4FC0);-webkit-background-clip:text;-webkit-text-fill-color:transparent; font-family:'Playfair Display',serif; font-size:19px; font-weight:700; font-style:italic; letter-spacing:1px; text-shadow:0 0 20px rgba(240,91,143,0.4);">Give To Gain</strong></p>
     <div class="hero-tags">
       <span class="tag accent">Event Branding</span>
       <span class="tag">Print Collateral</span>
@@ -513,7 +527,7 @@
 <footer class="case-footer">
   <div>
     <p class="footer-name">Ian Marocha</p>
-    <p style="font-size:12px;color:rgba(255,255,255,.35);margin-top:4px">Creative Multimedia Art Director · Nairobi, Kenya</p>
+    <p style="font-size:12px;color:rgba(0,0,0,.35);margin-top:4px">Creative Multimedia Art Director · Nairobi, Kenya</p>
   </div>
   <div class="footer-links">
     <a href="https://behance.net/iannyaata" target="_blank">Behance</a>
